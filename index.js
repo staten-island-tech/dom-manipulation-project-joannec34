@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //dom manipulation
 
 /* const button = document.getElementById("button"); //use when getting an id
@@ -12,3 +13,7 @@ const domSelectors = {
 };
 
 console.log(domSelectors.point);
+=======
+//dom manipulation project
+
+>>>>>>> parent of 8fea1b8 (y)
