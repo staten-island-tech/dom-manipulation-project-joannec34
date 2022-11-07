@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-//dom manipulation project
-
-=======
 //dom manipulation
 
 /* const button = document.getElementById("button"); //use when getting an id
@@ -16,4 +12,3 @@ const domSelectors = {
 };
 
 console.log(domSelectors.point);
->>>>>>> e440d26faa7c37ab4665c481ea4ee93501a5aa51
