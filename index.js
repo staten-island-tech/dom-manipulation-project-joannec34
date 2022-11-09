@@ -4,7 +4,7 @@
 const text = document.querySelector("#text"); //use when getting a class
 console.log(button); */
 
-const DOMSelectors = {
+/* const DOMSelectors = {
   button: document.getElementById("button"),
   text: document.querySelector("#text"),
   box: document.getElementById("box"),
@@ -25,14 +25,12 @@ function changeLi() {
   let pointIndex = 1;
   DOMSelectors.points.forEach((point) => {
   point.addEventListener("click", function(){
-    point.textContent = 'hello i am point ${pointIndex}';
+    point.textContent = `hello i am point ${pointIndex}`;
+    pointIndex++;
   });
 });
 }
-
-//fix pointIndex
-
-changeLi();
+changeLi(); */
 
 /*
 Create an object called “DOMSelectors” to hold your DOM Selectors
@@ -42,5 +40,20 @@ Create a function that clears the input fields after injecting the object
 Create a function to remove an object after they have been created
 */
 
+const DOMSelectors = {
+  button: document.getElementById("btn"),
+  box: document.getElementById("container-box"),
+  input: document.querySelector(`#input`),
+}
 
+const cat = "meow";
 
+DOMSelectors.box.insertAdjacentHTML("afterend",
+`<h1>we are a ${cat}</h1>`);
+
+DOMSelectors.button.addEventListener("click", function(){
+  let input = DOMSelectors.input.value;
+  DOMSelectors.box.insertAdjacentHTML("beforeend",
+  `<p>${input}</p>`)
+  DOMSelectors.input.value = "";
+})
