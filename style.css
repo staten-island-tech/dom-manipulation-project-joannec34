@@ -1,3 +1,16 @@
-#box {
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#box1,
+#box2 {
     background-color: pink;
+    padding: 20px;
+    margin: 10px;
+    width: 40%;
+}
+
+img {
+    width: 100px;
 }

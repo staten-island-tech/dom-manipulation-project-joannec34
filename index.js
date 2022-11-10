@@ -9,20 +9,35 @@ Create a function to remove an object after they have been created
 */
 
 const DOMSelectors = {
-  box: document.getElementById("box"),
+  box1: document.getElementById("box1"),
+  box2: document.getElementById("box2"),
   button: document.getElementById("btn"),
   input1: document.querySelector(`#input1`),
   input2: document.querySelector(`#input2`),
 };
 
-console.log(DOMSelectors.box);
-
-DOMSelectors.button.addEventListener("click", function () {
+DOMSelectors.button.addEventListener("submit", function () {
   let input1 = DOMSelectors.input1.value;
   let input2 = DOMSelectors.input2.value;
   let percentage = Math.floor(Math.random() * (100 - 1)) + 1;
-  DOMSelectors.box.insertAdjacentHTML(
-    "afterend",
+  DOMSelectors.box2.insertAdjacentHTML(
+    "beforeend",
     `<p>${input1} and ${input2} are ${percentage}% compatibile</p>`
   );
+  if (percentage < 50) {
+    DOMSelectors.box2.insertAdjacentHTML(
+      "beforeend",
+      `<p>you guys are not meant for each other</p>
+      <img src="https://www.clipartkey.com/mpngs/m/152-1524961_download-crying-emoji-face-iphone-ios-emojis-in.png" alt="bad">`
+    );
+  }
+  else {
+    DOMSelectors.box2.insertAdjacentHTML(
+      "beforeend",
+      `<p>you guys are meant for each other</p>
+      <img src="https://www.kindpng.com/picc/m/34-345650_smiling-face-with-3-hearts-png-transparent-png.png" alt="good">`
+    );
+  };
 });
+
+//submit thing doesnt work cuz of form element thing
