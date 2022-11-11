@@ -1,3 +1,46 @@
-#box {
+html,
+body,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 1000%;
+    text-align: center;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#box1,
+#box2 {
     background-color: pink;
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+    height: auto;
+    font-size: 1000%;
+}
+
+#byeimage {
+    width: max-content;
+}
+
+#btn {
+    padding: 2px 5px 2px 5px;
+}
+
+.formstuff {
+    margin: 10px;
+    font-size: 100%;
+}
+
+img {
+    width: 100px;
 }
