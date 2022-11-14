@@ -16,11 +16,12 @@ const DOMSelectors = {
   urname: document.querySelector(`#urname`),
   theirname: document.querySelector(`#theirname`),
   form: document.getElementById("form"),
+  removebtn: document.getElementById("removebtn"),
 };
 
 console.log(DOMSelectors.box);
 
-DOMSelectors.form.addEventListener("submit", function (event) {
+DOMSelectors.form.addEventListener("submit", function(event) {
   event.preventDefault();
   let urname = DOMSelectors.urname.value;
   let theirname = DOMSelectors.theirname.value;
@@ -34,14 +35,22 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   if (luvpercentage < 50) {
     DOMSelectors.box2.insertAdjacentHTML(
       "beforeend",
-      `<p>uh oh! maybe it's time to find someone new</p>
+      `<p class="displaytext">uh oh! maybe it's time to find someone new</p>
       <img src="https://www.clipartkey.com/mpngs/m/152-1524961_download-crying-emoji-face-iphone-ios-emojis-in.png" alt="bad">`
     );
   } else {
     DOMSelectors.box2.insertAdjacentHTML(
       "beforeend",
-      `<p>you guys are meant for each other!</p>
+      `<p class="displaytext">you guys are meant for each other!</p>
       <img src="https://www.kindpng.com/picc/m/34-345650_smiling-face-with-3-hearts-png-transparent-png.png" alt="good">`
     );
   }
+  DOMSelectors.box2.insertAdjacentHTML(
+    "beforeend",
+    `<p><button type="button" id="removebtn">try again</button></p>`
+  )
+});
+
+DOMSelectors.removebtn.addEventListener("submit", function() {
+//help
 });
