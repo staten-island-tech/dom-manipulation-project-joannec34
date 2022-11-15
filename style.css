@@ -7,10 +7,16 @@ body,
     font-size: 62.5%;
 }
 
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: rgb(255, 236, 239);
+}
+
 h1 {
     font-size: 1000%;
     text-align: center;
     margin: 1em;
+    color: palevioletred;
 }
 
 .parent {
@@ -21,27 +27,50 @@ h1 {
 
 #box1,
 #box2 {
-    background-color: pink;
-    padding: 20px;
+    background-color: #ffc0cb;
+    padding: 50px;
     margin: 10px;
     width: 500px;
     height: 500px;
     font-size: 1000%;
     border-radius: 10%;
+    border: palevioletred solid 5px;
+    position: relative;
 }
 
+.text {
+    margin-bottom: 20px;
+}
 
 #byeimage {
-    width: max-content;
+    width: 300px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
 }
 
 #btn {
-    padding: 2px 5px 2px 5px;
+    font-family: 'Fredoka', sans-serif;
+    padding: 5px 15px 5px 15px;
+    position: absolute;
+    bottom: 10%;
+    border-radius: 20px;
+    border: palevioletred solid 5px;
+    background-color: lightcyan;
 }
 
 .formstuff {
     margin: 10px;
-    font-size: 100%;
+    font-size: 150%;
+}
+
+#urname,
+#theirname {
+    margin: 10px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 20px;
+    border: palevioletred solid 5px;
+    background-color: lightcyan;
 }
 
 img {
