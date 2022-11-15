@@ -21,7 +21,7 @@ const DOMSelectors = {
 
 console.log(DOMSelectors.box);
 
-DOMSelectors.form.addEventListener("submit", function(event) {
+DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
   let urname = DOMSelectors.urname.value;
   let theirname = DOMSelectors.theirname.value;
@@ -48,9 +48,14 @@ DOMSelectors.form.addEventListener("submit", function(event) {
   DOMSelectors.box2.insertAdjacentHTML(
     "beforeend",
     `<p><button type="button" id="removebtn">try again</button></p>`
-  )
+  );
+  function clearinput() {
+    DOMSelectors.urname.value = "";
+    DOMSelectors.theirname.value = "";
+  }
+  clearinput();
 });
 
-DOMSelectors.removebtn.addEventListener("submit", function() {
-//help
+DOMSelectors.removebtn.addEventListener("submit", function () {
+  //help
 });
