@@ -9,8 +9,9 @@ Create a function to remove an object after they have been created
 */
 
 const DOMSelectors = {
-  box1: document.getElementById("box1"),
-  box2: document.getElementById("box2"),
+  box1: document.querySelector(".box1"),
+  box2: document.querySelector(".box2"),
+  box2stuff: document.querySelectorAll(".box2"),
   byeimage: document.getElementById("byeimage"),
   button: document.getElementById("btn"),
   urname: document.querySelector(`#urname`),
@@ -30,32 +31,42 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   byeimage.remove();
   DOMSelectors.box2.insertAdjacentHTML(
     "beforeend",
-    `<p>${urname} and ${theirname} are ${luvpercentage}% compatibile</p>`
+    `<p>${urname} and ${theirname} are ${luvpercentage}% compatibile.</p>`
   );
   if (luvpercentage < 50) {
     DOMSelectors.box2.insertAdjacentHTML(
       "beforeend",
-      `<p class="displaytext">uh oh! maybe it's time to find someone new</p>
-      <img src="https://www.clipartkey.com/mpngs/m/152-1524961_download-crying-emoji-face-iphone-ios-emojis-in.png" alt="bad">`
+      `<p class="displaytext">Maybe it's time to find someone new.</p>
+      <img src="https://media.tenor.com/5eBi-G3uqmoAAAAi/cute-crying.gif" alt="bad">`
     );
   } else {
     DOMSelectors.box2.insertAdjacentHTML(
       "beforeend",
-      `<p class="displaytext">you guys are meant for each other!</p>
-      <img src="https://www.kindpng.com/picc/m/34-345650_smiling-face-with-3-hearts-png-transparent-png.png" alt="good">`
+      `<p class="displaytext">You guys are meant for each other!</p>
+      <img src="https://media.tenor.com/-MlEF7aRcA0AAAAi/tkthao219-quby.gif" alt="good">`
     );
   }
   DOMSelectors.box2.insertAdjacentHTML(
     "beforeend",
-    `<p><button type="button" id="removebtn">try again</button></p>`
+    `<p><button type="button" id="removebtn">Try Again</button></p>`
   );
   function clearinput() {
     DOMSelectors.urname.value = "";
     DOMSelectors.theirname.value = "";
-  }
+  };
   clearinput();
-});
+  });
 
-DOMSelectors.removebtn.addEventListener("submit", function () {
-  //help
-});
+    //FIX THE MESS BELOW SOMEHOW XD
+  DOMSelectors.removebtn.addEventListener("click", function() {
+    let remove = DOMSelectors.box2stuff;
+    remove.forEach((node) => {
+      node.addEventListener("click", function(event) {
+        event.target.parentElement.remove();
+      })
+    });
+    DOMSelectors.box2.insertAdjacentHTML(
+      "beforeend",
+      `<img id="byeimage" src="https://media.tenor.com/XsWhfNnJu5cAAAAi/soft-meme.gif" alt="heart">`
+    );
+  });
