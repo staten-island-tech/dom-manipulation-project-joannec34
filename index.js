@@ -12,12 +12,13 @@ const DOMSelectors = {
   body: document.querySelector("body"),
   box1: document.querySelector(".box1"),
   box2: document.querySelector(".box2"),
+  removestuff: document.querySelectorAll(".box2"),
   byeimage: document.getElementById("byeimage"),
-  button: document.getElementById("btn"),
+  //submitbtn: document.getElementById("btn"),
   urname: document.getElementById("urname"),
   theirname: document.getElementById("theirname"),
   form: document.getElementById("form"),
-  removebtn: document.getElementById("removebtn"),
+  //removebtn: document.getElementById("removebtn"),
   heartbutton: document.getElementById("heart"),
 };
 
@@ -31,7 +32,7 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   byeimage.remove();
   DOMSelectors.box2.insertAdjacentHTML(
     "beforeend",
-    `<p>${urname} and ${theirname} are ${luvpercentage}% compatibile.</p>`
+    `<p>${urname} and ${theirname} are ${luvpercentage}% compatibile</p>`
   );
   //25 50 75 100
   if (luvpercentage < 25) {
@@ -69,33 +70,31 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   }
   clearinput();
   function tryagain() {
-    let removestuff = document.querySelectorAll(".box2");
-    removebtn.addEventListener("click", function() {
-        removestuff.forEach((node) => {
-        node.textContent = ``;  
+    removebtn.addEventListener("click", function () {
+      DOMSelectors.removestuff.forEach((node) => {
+        node.textContent = ``;
       });
+      DOMSelectors.box2.insertAdjacentElement("afterbegin", byeimage);
     });
-  };
+  }
   tryagain();
 });
 
 DOMSelectors.heartbutton.addEventListener("click", function () {
   function changebackground(background) {
-    background.style.backgroundColor = "#FFFDE7";
+    background.style.backgroundColor = "#fdefd8";
   }
   changebackground(DOMSelectors.body);
   function changebox(box) {
-    box.style.backgroundColor = "#FFEFCB";
-    box.style.borderColor = "#F6E3BA";
+    box.style.backgroundColor = "#f8e3c0";
+    box.style.borderColor = "#c4917c";
   }
   changebox(DOMSelectors.box1);
   changebox(DOMSelectors.box2);
-  function changebuttons(button) {
-    button.style.backgroundColor = "#FFFDE7";
-    button.style.borderColor = "#F6E3BA";
+  function changeinputs(button) {
+    button.style.backgroundColor = "#fdefd8";
+    button.style.borderColor = "#c4917c";
   }
-  changebuttons(DOMSelectors.urname);
-  changebuttons(DOMSelectors.theirname);
-  changebuttons(DOMSelectors.button);
-  changebuttons(DOMSelectors.removebtn);
+  changeinputs(DOMSelectors.urname);
+  changeinputs(DOMSelectors.theirname);
 });

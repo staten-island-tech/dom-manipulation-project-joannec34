@@ -21,15 +21,29 @@ h1 {
 }
 
 h2 {
+    font-size: 400%;   
     text-align: center;
 }
 
+.bottom {
+    font-size: 400%;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    color: #7D5A5A;
+}
+
 #heart {
-    font-size: 1000%;
+    font-size: 150%;
     margin: 20px;
     color: #7D5A5A;
     background: none;
     border: none;
+    transition: 0.4s;
+}
+
+#heart:hover {
+    transform: scale(1.2);
 }
 
 
@@ -72,12 +86,22 @@ img {
 #removebtn {
     font-size: 20px;
     font-family: 'Fredoka', sans-serif;
+    color: #7D5A5A;
     padding: 5px 15px 5px 15px;
     position: absolute;
     bottom: 10%;
     border-radius: 20px;
-    border: #FFB5C2 solid 5px;
-    background-color: #FCEDF0;
+    border: #7D5A5A solid 5px;
+    background-color: #c4917c;
+    transition: 0.2s;
+}
+
+#btn:hover, #removebtn:hover {
+box-shadow: 4px 4px 0px #7D5A5A;
+}
+
+#btn:active, #removebtn:active {
+    transform: scale(1.1);
 }
 
 .formstuff {
@@ -92,6 +116,9 @@ img {
     border-radius: 20px;
     border: #FFB5C2 solid 5px;
     background-color: #FCEDF0;
+    transition: 0.4s;
+    color: #7D5A5A;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .displaytext {
