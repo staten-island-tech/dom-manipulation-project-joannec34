@@ -76,8 +76,8 @@ img {
     position: absolute;
     bottom: 10%;
     border-radius: 20px;
-    border: #FEC0CB solid 10px;
-    background-color: #FFB5C2;
+    border: #FFB5C2 solid 5px;
+    background-color: #FCEDF0;
 }
 
 .formstuff {
