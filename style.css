@@ -9,15 +9,29 @@ body,
 
 body {
     font-family: 'Fredoka', sans-serif;
-    background-color: rgb(255, 236, 239);
+    background-color: #FDE2E7;
+    color: #7D5A5A;
 }
 
 h1 {
     font-size: 1000%;
     text-align: center;
-    margin: 1em;
-    color: palevioletred;
+    margin-top: 1em;
+    color: #7D5A5A;
 }
+
+h2 {
+    text-align: center;
+}
+
+#heart {
+    font-size: 1000%;
+    margin: 20px;
+    color: #7D5A5A;
+    background: none;
+    border: none;
+}
+
 
 .parent {
     display: flex;
@@ -27,14 +41,14 @@ h1 {
 
 .box1,
 .box2 {
-    background-color: #ffc0cb;
+    background-color: #FECBD4;
     padding: 50px;
     margin: 10px;
     width: 500px;
     height: 500px;
     font-size: 1000%;
     border-radius: 10%;
-    border: palevioletred solid 5px;
+    border: #FEC0CB solid 10px;
     position: relative;
 }
 
@@ -62,8 +76,8 @@ img {
     position: absolute;
     bottom: 10%;
     border-radius: 20px;
-    border: palevioletred solid 5px;
-    background-color: lightcyan;
+    border: #FEC0CB solid 10px;
+    background-color: #FFB5C2;
 }
 
 .formstuff {
@@ -76,8 +90,8 @@ img {
     margin: 10px;
     padding: 5px 15px 5px 15px;
     border-radius: 20px;
-    border: palevioletred solid 5px;
-    background-color: lightcyan;
+    border: #FFB5C2 solid 5px;
+    background-color: #FCEDF0;
 }
 
 .displaytext {
