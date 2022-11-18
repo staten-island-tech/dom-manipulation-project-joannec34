@@ -21,16 +21,8 @@ h1 {
 }
 
 h2 {
-    font-size: 400%;   
-    text-align: center;
-}
-
-.bottom {
     font-size: 400%;
-    font-weight: bold;
     text-align: center;
-    margin: 20px;
-    color: #7D5A5A;
 }
 
 #heart {
@@ -43,9 +35,22 @@ h2 {
 }
 
 #heart:hover {
-    transform: scale(1.2);
+    animation: 2s linear infinite beating;
 }
 
+@keyframes beating {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 .parent {
     display: flex;
@@ -66,15 +71,8 @@ h2 {
     position: relative;
 }
 
-.text {
-    margin-bottom: 20px;
-}
-
-img {
-    width: 300px;
-    position: absolute;
-    bottom: 10%;
-    right: 10%
+.question {
+    margin-bottom: 40px;
 }
 
 #byeimage {
@@ -96,11 +94,13 @@ img {
     transition: 0.2s;
 }
 
-#btn:hover, #removebtn:hover {
-box-shadow: 4px 4px 0px #7D5A5A;
+#btn:hover,
+#removebtn:hover {
+    box-shadow: 4px 4px 0px #7D5A5A;
 }
 
-#btn:active, #removebtn:active {
+#btn:active,
+#removebtn:active {
     transform: scale(1.1);
 }
 
@@ -116,11 +116,25 @@ box-shadow: 4px 4px 0px #7D5A5A;
     border-radius: 20px;
     border: #FFB5C2 solid 5px;
     background-color: #FCEDF0;
-    transition: 0.4s;
     color: #7D5A5A;
     font-family: 'Fredoka', sans-serif;
 }
 
 .displaytext {
     font-size: 30px;
+}
+
+img {
+    width: 300px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%
+}
+
+.bottom {
+    font-size: 400%;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    color: #7D5A5A;
 }
