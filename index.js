@@ -22,12 +22,22 @@ const DOMSelectors = {
 };
 
 DOMSelectors.form.addEventListener("submit", function (event) {
-  event.preventDefault();
   DOMSelectors.submitbtn.disabled = true;
+  event.preventDefault();
+  outputstuff();
+});
+
+function outputstuff() {
   let urname = DOMSelectors.urname.value;
   let theirname = DOMSelectors.theirname.value;
   let luvpercentage = Math.floor(Math.random() * (100 - 1)) + 1;
   const byeimage = DOMSelectors.byeimage;
+  replace(urname, theirname, luvpercentage, byeimage);
+  clearinput(urname, theirname);
+  tryagain(byeimage);
+}
+
+function replace(urname, theirname, luvpercentage, byeimage) {
   byeimage.remove();
   DOMSelectors.box2.insertAdjacentHTML(
     "beforeend",
@@ -62,22 +72,22 @@ DOMSelectors.form.addEventListener("submit", function (event) {
     "beforeend",
     `<p><button id="removebtn">Try Again</button></p>`
   );
-  function clearinput() {
-    DOMSelectors.urname.value = "";
-    DOMSelectors.theirname.value = "";
-  };
-  clearinput();
-  function tryagain() {
-    removebtn.addEventListener("click", function () {
-      DOMSelectors.removestuff.forEach((node) => {
-        node.textContent = ``;
-      });
-      DOMSelectors.box2.insertAdjacentElement("afterbegin", byeimage);
-      DOMSelectors.submitbtn.disabled = false;
+}
+
+function clearinput() {
+  urname.value = "";
+  theirname.value = "";
+}
+
+function tryagain(byeimage) {
+  removebtn.addEventListener("click", function () {
+    DOMSelectors.removestuff.forEach((node) => {
+      node.textContent = ``;
     });
-  }
-  tryagain();
-});
+    DOMSelectors.box2.insertAdjacentElement("afterbegin", byeimage);
+    DOMSelectors.submitbtn.disabled = false;
+  });
+}
 
 DOMSelectors.heartbutton.addEventListener("click", function () {
   function changebackground(background) {
